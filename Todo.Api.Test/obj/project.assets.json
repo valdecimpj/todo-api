@@ -6119,11 +6119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projects\\TodoApi\\Todo.Api.Test\\Todo.Api.Test.csproj",
+      "projectUniqueName": "C:\\Projects\\TodoApi\\Todo.Api.Test\\Todo.Api.Test.csproj",
       "projectName": "Todo.Api.Test",
-      "projectPath": "c:\\Projects\\TodoApi\\Todo.Api.Test\\Todo.Api.Test.csproj",
+      "projectPath": "C:\\Projects\\TodoApi\\Todo.Api.Test\\Todo.Api.Test.csproj",
       "packagesPath": "C:\\Users\\SistemasBr\\.nuget\\packages\\",
-      "outputPath": "c:\\Projects\\TodoApi\\Todo.Api.Test\\obj\\",
+      "outputPath": "C:\\Projects\\TodoApi\\Todo.Api.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SistemasBr\\AppData\\Roaming\\NuGet\\NuGet.Config",

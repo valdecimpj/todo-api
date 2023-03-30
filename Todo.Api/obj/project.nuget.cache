@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ryLx3T/pvVMpxupJvP4iNFZHTJOzqDcVtt092LiGwmOkuu2QZWBu6krl4DAJUhly9SD+VB2BiCKe5ZmZuPPf6g==",
+  "dgSpecHash": "TKTQB6vEOlHLzuwCZB1HIuxzhJtoW+f8Yy4CvRq1LElZXYG2mOtyxDqZUAUqiHlz5bQxtkNYRb0X+83Ymre9EQ==",
   "success": true,
-  "projectFilePath": "c:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj",
+  "projectFilePath": "C:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

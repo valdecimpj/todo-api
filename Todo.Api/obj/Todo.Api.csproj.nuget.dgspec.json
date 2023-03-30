@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj": {}
+    "C:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj": {}
   },
   "projects": {
-    "c:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj": {
+    "C:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj",
+        "projectUniqueName": "C:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj",
         "projectName": "Todo.Api",
-        "projectPath": "c:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj",
+        "projectPath": "C:\\Projects\\TodoApi\\Todo.Api\\Todo.Api.csproj",
         "packagesPath": "C:\\Users\\SistemasBr\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\TodoApi\\Todo.Api\\obj\\",
+        "outputPath": "C:\\Projects\\TodoApi\\Todo.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SistemasBr\\AppData\\Roaming\\NuGet\\NuGet.Config",

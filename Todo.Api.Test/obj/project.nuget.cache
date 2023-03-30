@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NeZ7LQQe3Vhbas4ruejP6LxgdzKlIHt4+1YBMwh+7qPEPkL+DD3XS5/isEXrM2rOFRp7+8jvxd4BfCQ4nT3LwQ==",
+  "dgSpecHash": "lTPUbPOLCVUtasT5fEIbm0j3hmjnOsF5WZzDAu2FQR1zCpNIKzUN/5kTHASwnI1UShprbe1spYUHewiJtkVG+g==",
   "success": true,
-  "projectFilePath": "c:\\Projects\\TodoApi\\Todo.Api.Test\\Todo.Api.Test.csproj",
+  "projectFilePath": "C:\\Projects\\TodoApi\\Todo.Api.Test\\Todo.Api.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SistemasBr\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\SistemasBr\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
