@@ -1,0 +1,5 @@
+services:
+  todo-api:
+    image: valdecimpj/todo-api:latest
+    ports:
+      - "80:80"
