@@ -5,16 +5,20 @@ namespace Todo.Api.Adapters.Repositories
 {
     public class TodoItemsMockRepository : ITodoItemsRepository
     {
-        public List<TodoItemModel> QueryAllTodoItemsByPage(int page, int pageSize) => new List<TodoItemModel>
+        private readonly TodoItemsDbContext todoItemsDbContext;
+
+        public TodoItemsMockRepository(TodoItemsDbContext todoItemsDbContext)
         {
-            new TodoItemModel(1, "test", false),
-            new TodoItemModel(2, "test2", false),
-            new TodoItemModel(3, "test3", false),
-        };
+            this.todoItemsDbContext = todoItemsDbContext;
+        }
+
+        public List<TodoItemModel> QueryAllTodoItemsByPage(int page, int pageSize) => 
+            todoItemsDbContext.TodoItemModels.Skip((page-1) * pageSize).Take(pageSize).ToList();
 
         public void SaveNewTodoItem(NewTodoItemModel newTodoItemModel)
         {
-            
+            todoItemsDbContext.Add(new TodoItemModel(0, newTodoItemModel.Description, false));
+            todoItemsDbContext.SaveChanges();
         }
     }
 }

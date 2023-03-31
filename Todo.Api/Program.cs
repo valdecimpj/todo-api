@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using Todo.Api.Adapters.DependencyInjector;
+using Todo.Api.Adapters.Repositories;
 using Todo.Api.Application.Controllers.Requests;
 using Todo.Api.Application.Exceptions;
 using Todo.Api.Application.Models;
@@ -7,7 +9,7 @@ using Todo.Api.DependencyInjectionModule;
 
 var builder = WebApplication.CreateBuilder(args);
 new TodoApiDependencyInjectionModule()
-    .RegisterAllModules(new WebApplicationDependencyInjector(builder));
+    .RegisterAllModules(builder);
 var app = builder.Build();
 
 app.MapPost("/", 
