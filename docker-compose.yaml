@@ -1,0 +1,38 @@
+services:
+  reverse-proxy:
+    image: traefik:v2.9
+    command: 
+    - "--api.insecure=true"
+    - "--providers.docker"
+
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  todo-db:
+    image: postgres:15.2-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: tododb
+    volumes:
+      - todo-db-volume:/var/lib/postgresql/data
+    labels:
+      - "traefik.enable=false"
+
+  todo-api:
+    image: valdecimpj/todo-api:latest
+    restart: always
+    labels:
+      - "traefik.http.middlewares.todo-api-buffer.buffering.maxRequestBodyBytes=150"
+      - "traefik.http.middlewares.todo-api-buffer.buffering.maxResponseBodyBytes=100000"
+      - "traefik.http.middlewares.todo-api-ratelimit.ratelimit.average=1"
+      - "traefik.http.middlewares.todo-api-ratelimit.ratelimit.burst=10"
+      - "traefik.http.middlewares.todo-api-retry.retry.attempts=4"
+      - "traefik.http.middlewares.todo-api-retry.retry.initialinterval=100ms"
+      - "traefik.http.routers.my-service.middlewares=todo-api-buffer,todo-api-ratelimit,todo-api-retry"
+
+volumes:
+    todo-db-volume:    
