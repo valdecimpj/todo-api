@@ -13,14 +13,17 @@ jobs:
       
       - name: Run xUnit Tests
         run: dotnet test
-          
+      
+      - name: Login to Github Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: valdecimpj
+          password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build and Publish Docker image
         uses: docker/build-push-action@v4
         with:
           context: ./Todo.Api
           push: true
           tags: ghcr.io/valdecimpj/todo-api:latest
-        env:
-          DOCKER_USERNAME: valdecimpj
-          DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
           
