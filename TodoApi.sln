@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Api.Test", "Todo.Api.T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClusterConfigurtionFiles", "ClusterConfigurtionFiles", "{3F0A045B-4BD1-496B-86A7-D0287F096033}"
 	ProjectSection(SolutionItems) = preProject
+		.env.dev = .env.dev
 		docker-compose.yaml = docker-compose.yaml
+		RunClusterAsDev.ps1 = RunClusterAsDev.ps1
+		todo-api-stack.yaml = todo-api-stack.yaml
+		todo-db-stack.yaml = todo-db-stack.yaml
+		traefik-stack.yaml = traefik-stack.yaml
 	EndProjectSection
 EndProject
 Global

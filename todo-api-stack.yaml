@@ -1,0 +1,30 @@
+version: "3"
+services:
+  todo-api-v1:
+    image: ${TODO_API_REGISTRY_URL}todo-api:3.0
+    env_file:
+      - ./.env.dev
+    deploy:
+      replicas: 2
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.todo-api-v1.rule=Host(`localhost`)"
+        - "traefik.http.routers.todo-api-v1.entrypoints=https"
+        - "traefik.http.routers.todo-api-v1.tls=true"
+        - "traefik.http.routers.todo-api-v1.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.todo-api-v1.loadbalancer.server.port=80"
+        - "traefik.http.middlewares.todo-api-buffer.buffering.maxRequestBodyBytes=150"
+        - "traefik.http.middlewares.todo-api-buffer.buffering.maxResponseBodyBytes=100000"
+        - "traefik.http.middlewares.todo-api-ratelimit.ratelimit.average=1"
+        - "traefik.http.middlewares.todo-api-ratelimit.ratelimit.burst=10"
+        - "traefik.http.middlewares.todo-api-retry.retry.attempts=4"
+        - "traefik.http.middlewares.todo-api-retry.retry.initialinterval=100ms"
+        - "traefik.http.routers.todo-api-v1.middlewares=todo-api-buffer,todo-api-ratelimit,todo-api-retry"
+      restart_policy:
+        condition: any
+    networks:
+      - traefik-public
+ 
+networks:
+  traefik-public:
+    external: true

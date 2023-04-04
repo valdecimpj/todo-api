@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  todo-db:
+    image: postgres:15.2-alpine
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_VALUE}
+      POSTGRES_DB: tododb
+    networks:
+      - traefik-public
+    volumes:
+      - todo-db-volume:/var/lib/postgresql/data
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=false"
+    env_file:
+      - ./.env.dev
+
+volumes:
+    todo-db-volume:
+
+networks:
+  traefik-public:
+    external: true

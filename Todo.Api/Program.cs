@@ -1,6 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using Todo.Api.Adapters.DependencyInjector;
-using Todo.Api.Adapters.Repositories;
+using System.Net;
 using Todo.Api.Application.Controllers.Requests;
 using Todo.Api.Application.Exceptions;
 using Todo.Api.Application.Models;
